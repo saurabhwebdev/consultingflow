@@ -14,6 +14,7 @@ import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import SupplyChain from "./pages/SupplyChain";
 import SalesDistribution from "./pages/SalesDistribution";
+import Careers from "./pages/Careers";
 import TIAChat from "./components/TIAChat";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/supply-chain" element={<SupplyChain />} />
             <Route path="/sales-distribution" element={<SalesDistribution />} />
+            <Route path="/careers" element={<Careers />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -1,0 +1,229 @@
+{
+  "careerBenefits": [
+    {
+      "id": 1,
+      "title": "Professional Growth",
+      "description": "Continuous learning opportunities, mentorship programs, and clear advancement paths tailored to your career goals",
+      "icon": "👨‍💼"
+    },
+    {
+      "id": 2,
+      "title": "Work-Life Balance",
+      "description": "Flexible work arrangements, generous PTO, and policies that respect your personal time and wellbeing",
+      "icon": "⚖️"
+    },
+    {
+      "id": 3,
+      "title": "Inclusive Culture",
+      "description": "A diverse and supportive environment where every voice is valued, respected and empowered to contribute",
+      "icon": "🤝"
+    },
+    {
+      "id": 4,
+      "title": "Global Exposure",
+      "description": "Opportunities to work with international clients and collaborate across our offices in 5 countries",
+      "icon": "🌎"
+    },
+    {
+      "id": 5,
+      "title": "Competitive Compensation",
+      "description": "Attractive salary packages, performance bonuses, health benefits, and retirement plans",
+      "icon": "💰"
+    },
+    {
+      "id": 6,
+      "title": "Innovation Focus",
+      "description": "Be part of cutting-edge projects and contribute to developing transformative business solutions",
+      "icon": "💡"
+    }
+  ],
+  "openPositions": [
+    {
+      "id": 1,
+      "title": "Senior Supply Chain Consultant",
+      "location": "India",
+      "type": "Full-time",
+      "department": "Supply Chain",
+      "description": "Lead and execute supply chain transformation projects for our clients, leveraging your expertise in supply chain strategy, network optimization, and process improvement.",
+      "responsibilities": [
+        "Partner with clients to identify supply chain challenges and develop innovative solutions",
+        "Lead project teams and workstreams to deliver high-quality results",
+        "Perform complex analyses to derive actionable insights",
+        "Develop implementation roadmaps and drive execution",
+        "Mentor junior consultants and contribute to knowledge development"
+      ],
+      "requirements": [
+        "8+ years of experience in supply chain consulting or industry roles",
+        "Strong analytical and problem-solving skills",
+        "Excellent communication and client management abilities",
+        "Bachelor's degree in Engineering, Business, or related field; MBA preferred",
+        "Experience with supply chain technologies and digital transformation"
+      ],
+      "active": true,
+      "featured": true,
+      "datePosted": "2023-10-15"
+    },
+    {
+      "id": 2,
+      "title": "Data Scientist",
+      "location": "United States",
+      "type": "Full-time",
+      "department": "Data & Decision Intelligence",
+      "description": "Develop advanced analytics models and machine learning algorithms to help our clients extract actionable insights from their data and make better business decisions.",
+      "responsibilities": [
+        "Design and implement machine learning models to solve complex business problems",
+        "Collaborate with consultants to integrate data insights into client solutions",
+        "Clean, transform, and analyze large datasets from various sources",
+        "Develop data visualization solutions to communicate findings effectively",
+        "Stay current with emerging technologies and methodologies in data science"
+      ],
+      "requirements": [
+        "5+ years of experience in data science or related field",
+        "Proficiency in Python, R, or similar programming languages",
+        "Experience with ML frameworks (TensorFlow, PyTorch, etc.)",
+        "Strong statistical knowledge and data manipulation skills",
+        "Master's or PhD in Computer Science, Statistics, or related field"
+      ],
+      "active": true,
+      "featured": true,
+      "datePosted": "2023-11-02"
+    },
+    {
+      "id": 3,
+      "title": "Business Development Manager",
+      "location": "Singapore",
+      "type": "Full-time",
+      "department": "Sales",
+      "description": "Identify and pursue new business opportunities, develop client relationships, and drive revenue growth in the Asia-Pacific region.",
+      "responsibilities": [
+        "Develop and execute sales strategies to achieve revenue targets",
+        "Build and maintain relationships with key decision-makers at target companies",
+        "Identify and qualify new sales opportunities through outreach and networking",
+        "Collaborate with delivery teams to develop compelling proposals",
+        "Track and report on sales activities and pipeline development"
+      ],
+      "requirements": [
+        "7+ years of experience in B2B sales, preferably in consulting or professional services",
+        "Proven track record of meeting or exceeding sales targets",
+        "Strong network and relationships in the APAC business community",
+        "Excellent presentation and negotiation skills",
+        "Bachelor's degree in Business or related field"
+      ],
+      "active": true,
+      "featured": false,
+      "datePosted": "2023-09-20"
+    },
+    {
+      "id": 4,
+      "title": "Financial Consultant",
+      "location": "Netherlands",
+      "type": "Full-time",
+      "department": "Finance",
+      "description": "Provide strategic financial advice to clients, helping them optimize their financial operations, improve performance, and achieve their business objectives.",
+      "responsibilities": [
+        "Conduct financial assessments and identify improvement opportunities",
+        "Develop financial models and perform scenario analyses",
+        "Design and implement financial transformation initiatives",
+        "Advise clients on financial strategy and operational improvements",
+        "Collaborate with cross-functional teams to deliver integrated solutions"
+      ],
+      "requirements": [
+        "6+ years of experience in financial consulting or corporate finance",
+        "Strong financial modeling and analytical skills",
+        "Knowledge of financial systems and technologies",
+        "CPA, CFA, or MBA preferred",
+        "Excellent client communication and project management skills"
+      ],
+      "active": false,
+      "featured": false,
+      "datePosted": "2023-08-15"
+    },
+    {
+      "id": 5,
+      "title": "Digital Transformation Specialist",
+      "location": "United Kingdom",
+      "type": "Full-time",
+      "department": "Business Consulting",
+      "description": "Guide clients through their digital transformation journey, helping them leverage technology to enhance their business processes and customer experiences.",
+      "responsibilities": [
+        "Assess clients' digital maturity and identify transformation opportunities",
+        "Develop digital roadmaps and implementation strategies",
+        "Lead digital transformation initiatives from concept to execution",
+        "Advise on technology selection and integration",
+        "Measure and report on transformation outcomes and ROI"
+      ],
+      "requirements": [
+        "8+ years of experience in digital transformation or related fields",
+        "Strong understanding of digital technologies and their business applications",
+        "Experience leading large-scale transformation projects",
+        "Excellent stakeholder management and change management skills",
+        "Bachelor's degree in Business, IT, or related field; MBA a plus"
+      ],
+      "active": true,
+      "featured": true,
+      "datePosted": "2023-10-05"
+    },
+    {
+      "id": 6,
+      "title": "Junior Supply Chain Analyst",
+      "location": "India",
+      "type": "Full-time",
+      "department": "Supply Chain",
+      "description": "Support supply chain consulting projects through data analysis, research, and solution development to help clients optimize their supply chain operations.",
+      "responsibilities": [
+        "Collect and analyze supply chain data to identify trends and insights",
+        "Assist in developing client deliverables and presentations",
+        "Conduct research on industry best practices and benchmarks",
+        "Support senior consultants in client engagements",
+        "Contribute to the development of supply chain models and tools"
+      ],
+      "requirements": [
+        "1-3 years of experience in supply chain or consulting",
+        "Strong analytical and problem-solving skills",
+        "Proficiency in Excel and data visualization tools",
+        "Bachelor's degree in Engineering, Business, or related field",
+        "Excellent written and verbal communication skills"
+      ],
+      "active": true,
+      "featured": false,
+      "datePosted": "2023-11-10"
+    },
+    {
+      "id": 7,
+      "title": "Marketing Specialist",
+      "location": "United States",
+      "type": "Full-time",
+      "department": "Marketing",
+      "description": "Develop and execute marketing strategies to increase brand awareness, generate leads, and support business development efforts.",
+      "responsibilities": [
+        "Create compelling content for various channels (website, social media, etc.)",
+        "Manage digital marketing campaigns and track performance",
+        "Develop thought leadership materials in collaboration with consultants",
+        "Coordinate events and webinars to showcase expertise",
+        "Analyze marketing metrics and optimize strategies accordingly"
+      ],
+      "requirements": [
+        "4+ years of experience in B2B marketing, preferably in professional services",
+        "Strong content creation and digital marketing skills",
+        "Experience with marketing automation and CRM tools",
+        "Bachelor's degree in Marketing, Communications, or related field",
+        "Excellent project management and organizational skills"
+      ],
+      "active": false,
+      "featured": false,
+      "datePosted": "2023-07-20"
+    }
+  ],
+  "careersSEO": {
+    "title": "Careers at Thoucentric - Join Our Team of Innovators",
+    "description": "Explore career opportunities at Thoucentric, where innovation meets purpose. Join our global team and help transform businesses through strategic insights and innovative solutions.",
+    "keywords": [
+      "Thoucentric careers",
+      "consulting jobs",
+      "supply chain careers",
+      "data science jobs",
+      "business consulting careers",
+      "finance jobs"
+    ]
+  }
+} 
