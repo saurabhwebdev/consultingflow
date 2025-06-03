@@ -44,17 +44,6 @@ const TIAChat: React.FC = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Auto-open chat after a short delay
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-      // Start with greeting
-      startConversation();
-    }, 1500);
-    
-    return () => clearTimeout(timer);
-  }, []);
-
   // Start conversation with greeting and first demographic question
   const startConversation = () => {
     if (conversationStarted) return;
