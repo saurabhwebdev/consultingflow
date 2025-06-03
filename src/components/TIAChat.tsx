@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, X, Minimize2, Maximize2, User, Sparkles } from 'lucide-react';
+import { Send, X, Minimize2, Maximize2, User, Sparkles, Volume2, VolumeX } from 'lucide-react';
 import { generateResponse } from '../utils/geminiApi';
 import ReactMarkdown from 'react-markdown';
 import {
@@ -14,6 +14,7 @@ import {
   DemographicQuestion,
   UserDemographics
 } from '../utils/chatbotUtils';
+import { playMessageSound, playNotificationSound, playOpenChatSound } from '../utils/soundEffects';
 
 interface Message {
   role: 'user' | 'model';
@@ -27,6 +28,7 @@ interface Message {
 const TIAChat: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
+  const [isSoundEnabled, setIsSoundEnabled] = useState(true);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -38,6 +40,13 @@ const TIAChat: React.FC = () => {
   
   // Demographic questions
   const demographicQuestions = getDemographicQuestions();
+
+  // Utility functions to play sounds only if enabled
+  const playSoundIfEnabled = (soundFunction: () => void) => {
+    if (isSoundEnabled) {
+      soundFunction();
+    }
+  };
 
   // Scroll to bottom of chat when messages change
   useEffect(() => {
@@ -54,6 +63,7 @@ const TIAChat: React.FC = () => {
     const initialGreeting = "👋 Hi there! I'm TIA, your Thoucentric Intelligent Assistant. I'm here to help you learn about our consulting services and solutions. Before we get started, I'd love to get to know you a bit better.";
     
     setMessages([{ role: 'model', content: initialGreeting, animate: true }]);
+    playSoundIfEnabled(playNotificationSound);
     
     // Ask first demographic question after a short delay
     setTimeout(() => {
@@ -77,6 +87,7 @@ const TIAChat: React.FC = () => {
         { role: 'model', content: thankYouMessage, animate: true }
       ]);
       
+      playSoundIfEnabled(playNotificationSound);
       return;
     }
     
@@ -98,6 +109,8 @@ const TIAChat: React.FC = () => {
         options: question.options
       }
     ]);
+    
+    playSoundIfEnabled(playNotificationSound);
   };
 
   // Handle user's answer to demographic question
@@ -120,6 +133,8 @@ const TIAChat: React.FC = () => {
             animate: true 
           }
         ]);
+        
+        playSoundIfEnabled(playNotificationSound);
         
         // Then ask the next question after a short delay
         setTimeout(() => {
@@ -144,6 +159,7 @@ const TIAChat: React.FC = () => {
     
     // Add user message to chat
     setMessages(prev => [...prev, { role: 'user', content: userMessage, animate: true }]);
+    playSoundIfEnabled(playMessageSound);
     
     // If we're still collecting demographics, treat this as an answer to the current question
     if (!demographicQuestionsComplete && currentQuestionIndex >= 0 && currentQuestionIndex < demographicQuestions.length) {
@@ -160,6 +176,7 @@ const TIAChat: React.FC = () => {
         : greeting;
       
       setMessages(prev => [...prev, { role: 'model', content: personalizedGreeting, animate: true }]);
+      playSoundIfEnabled(playNotificationSound);
       return;
     }
     
@@ -170,6 +187,7 @@ const TIAChat: React.FC = () => {
         : farewell;
       
       setMessages(prev => [...prev, { role: 'model', content: personalizedFarewell, animate: true }]);
+      playSoundIfEnabled(playNotificationSound);
       return;
     }
     
@@ -180,6 +198,7 @@ const TIAChat: React.FC = () => {
         : response;
       
       setMessages(prev => [...prev, { role: 'model', content: personalizedResponse, animate: true }]);
+      playSoundIfEnabled(playNotificationSound);
       return;
     }
     
@@ -203,6 +222,7 @@ const TIAChat: React.FC = () => {
       
       // Add AI response to chat
       setMessages(prev => [...prev, { role: 'model', content: responseText, animate: true }]);
+      playSoundIfEnabled(playNotificationSound);
     } catch (error) {
       console.error('Error generating response:', error);
       setMessages(prev => [...prev, { 
@@ -210,6 +230,7 @@ const TIAChat: React.FC = () => {
         content: `Sorry${userDemographics.name ? ', ' + userDemographics.name : ''}, I encountered an error. Please try again later.`,
         animate: true
       }]);
+      playSoundIfEnabled(playNotificationSound);
     } finally {
       setIsLoading(false);
     }
@@ -220,6 +241,9 @@ const TIAChat: React.FC = () => {
     // Add user message to chat
     setMessages(prev => [...prev, { role: 'user', content: option, animate: true }]);
     
+    // Play sound when option is clicked
+    playSoundIfEnabled(playMessageSound);
+    
     // Process the answer
     handleDemographicAnswer(option, questionId);
   };
@@ -228,11 +252,13 @@ const TIAChat: React.FC = () => {
     if (!isOpen) {
       setIsOpen(true);
       setIsMinimized(false);
+      playSoundIfEnabled(playOpenChatSound);
       if (!conversationStarted) {
         startConversation();
       }
     } else {
       setIsMinimized(!isMinimized);
+      playSoundIfEnabled(playMessageSound);
     }
   };
 
@@ -288,6 +314,13 @@ const TIAChat: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-2">
+              <button 
+                onClick={() => setIsSoundEnabled(!isSoundEnabled)} 
+                className="hover:bg-orange-600 rounded p-1 transition-colors"
+                title={isSoundEnabled ? "Mute sounds" : "Enable sounds"}
+              >
+                {isSoundEnabled ? <Volume2 size={16} /> : <VolumeX size={16} />}
+              </button>
               <button onClick={toggleChat} className="hover:bg-orange-600 rounded p-1 transition-colors">
                 {isMinimized ? <Maximize2 size={16} /> : <Minimize2 size={16} />}
               </button>
