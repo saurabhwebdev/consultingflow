@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { MoveRight, Calendar, MapPin, Briefcase, ChevronDown, ChevronUp, Search, Filter } from 'lucide-react';
@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import careersData from '../data/careers.json';
 import { Helmet } from 'react-helmet';
+import Particles from 'react-tsparticles';
+import { loadSlim } from "tsparticles-slim";
 
 const Careers = () => {
   // Scroll to top when component mounts
@@ -62,6 +64,14 @@ const Careers = () => {
       transition: { duration: 0.5 }
     }
   };
+
+  const particlesInit = useCallback(async (engine) => {
+    await loadSlim(engine);
+  }, []);
+  
+  const particlesLoaded = useCallback(async (container) => {
+    // container loaded
+  }, []);
 
   return (
     <>
@@ -433,7 +443,114 @@ const Careers = () => {
                 alt="Team Collaboration" 
                 className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-20"
               />
-              <div className="relative px-6 py-12 md:px-12 md:py-16 max-w-4xl mx-auto text-center">
+              
+              {/* Particles animation */}
+              <div className="absolute inset-0 w-full h-full z-0">
+                <Particles
+                  id="careersCTAParticles"
+                  init={particlesInit}
+                  loaded={particlesLoaded}
+                  options={{
+                    fullScreen: { enable: false },
+                    fpsLimit: 120,
+                    particles: {
+                      number: {
+                        value: 50,
+                        density: {
+                          enable: true,
+                          value_area: 800
+                        }
+                      },
+                      color: {
+                        value: ["#ffffff", "#ffedd5", "#ffaa80", "#ff8c66", "#f16539"],
+                      },
+                      shape: {
+                        type: ["circle", "triangle"],
+                      },
+                      opacity: {
+                        value: 0.6,
+                        random: true,
+                        anim: {
+                          enable: true,
+                          speed: 1,
+                          opacity_min: 0.1,
+                          sync: false
+                        }
+                      },
+                      size: {
+                        value: 4,
+                        random: true,
+                        anim: {
+                          enable: true,
+                          speed: 2,
+                          size_min: 1,
+                          sync: false
+                        }
+                      },
+                      line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: "#ffffff",
+                        opacity: 0.2,
+                        width: 1
+                      },
+                      move: {
+                        enable: true,
+                        speed: 1.5,
+                        direction: "none",
+                        random: true,
+                        straight: false,
+                        out_mode: "bounce",
+                        bounce: true,
+                        attract: {
+                          enable: true,
+                          rotateX: 600,
+                          rotateY: 1200
+                        }
+                      }
+                    },
+                    interactivity: {
+                      detect_on: "canvas",
+                      events: {
+                        onhover: {
+                          enable: true,
+                          mode: "bubble"
+                        },
+                        onclick: {
+                          enable: true,
+                          mode: "push"
+                        },
+                        resize: true
+                      },
+                      modes: {
+                        bubble: {
+                          distance: 200,
+                          size: 10,
+                          duration: 2,
+                          opacity: 0.8,
+                          speed: 3
+                        },
+                        push: {
+                          particles_nb: 4
+                        }
+                      }
+                    },
+                    retina_detect: true
+                  }}
+                  style={{
+                    position: "absolute",
+                    width: "100%",
+                    height: "100%",
+                    top: "0",
+                    left: "0",
+                    right: "0",
+                    bottom: "0",
+                    zIndex: 1
+                  }}
+                />
+              </div>
+              
+              <div className="relative px-6 py-12 md:px-12 md:py-16 max-w-4xl mx-auto text-center z-10">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                   Don't See the Right Fit?
                 </h2>
