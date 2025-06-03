@@ -128,20 +128,37 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isActive }) => {
               <h4 className="text-2xl font-bold text-white mb-4">Key Benefits</h4>
               <ul className="space-y-4">
                 {Array(3).fill(0).map((_, i) => (
-                  <li key={i} className="flex items-start">
-                    <div className="bg-[#f16539]/20 p-2 rounded-lg mr-4 mt-1">
-                      <div className="w-6 h-6 bg-[#f16539] rounded-md flex items-center justify-center">
-                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  <li key={i} className="flex items-start cursor-pointer">
+                    <div 
+                      className="bg-[#f16539]/20 p-2 rounded-lg mr-4 mt-1 transition-all duration-300 hover:bg-[#f16539]/30 hover:scale-105 hover:shadow-md cursor-pointer"
+                    >
+                      <div 
+                        className="w-6 h-6 bg-[#f16539] rounded-md flex items-center justify-center transition-all duration-300 hover:bg-[#ff7d53] hover:shadow-lg"
+                      >
+                        <svg 
+                          className="w-4 h-4 text-white transition-all duration-300 hover:scale-125 transform" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24" 
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            strokeWidth="2" 
+                            d="M5 13l4 4L19 7"
+                          ></path>
                         </svg>
                       </div>
                     </div>
-                    <div>
-                      <h5 className="text-lg font-semibold text-white mb-1">
+                    <div className="hover:translate-x-1 transition-transform duration-300">
+                      <h5 
+                        className="text-lg font-semibold text-white mb-1 transition-colors duration-300 hover:text-[#f16539]"
+                      >
                         {i === 0 ? "Expertise-Driven Solutions" : 
                          i === 1 ? "Data-Informed Strategy" : "Measurable Results"}
                       </h5>
-                      <p className="text-gray-300">
+                      <p className="text-gray-300 transition-colors duration-300 hover:text-gray-100">
                         {i === 0 ? "Our specialists bring deep industry knowledge to your challenges" : 
                          i === 1 ? "We use advanced analytics to guide decision-making" : "We deliver outcomes that impact your bottom line"}
                       </p>
