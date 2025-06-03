@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Brain, Target, Zap, Shield, Globe, Truck, ShoppingBag, LucideIcon, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Brain, Target, Zap, Shield, Globe, Truck, ShoppingBag, LucideIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -50,7 +50,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isActive }) => {
   return (
     <div 
       ref={ref}
-      className="relative w-full h-[80vh] md:h-[600px] flex items-center justify-center overflow-hidden"
+      className="relative w-full h-[90vh] md:h-[700px] flex items-start justify-center overflow-hidden"
     >
       {/* Background image with gradient overlay */}
       <div className="absolute inset-0 w-full h-full">
@@ -63,7 +63,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isActive }) => {
       </div>
       
       {/* Content */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-32 md:pt-40">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <motion.div
             initial="enter"
@@ -84,7 +84,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isActive }) => {
               {service.description}
             </p>
             
-            <ul className="space-y-3 mb-8">
+            <ul className="space-y-3 mb-6">
               {service.features.map((feature, featureIndex) => (
                 <li key={featureIndex} className="flex items-center text-gray-200">
                   <div className="w-2 h-2 bg-[#f16539] rounded-full mr-3"></div>
@@ -96,7 +96,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isActive }) => {
             {service.link ? (
               <Link 
                 to={service.link} 
-                className="inline-flex items-center px-6 py-3 bg-[#f16539] hover:bg-orange-600 text-white font-medium rounded-lg transition-colors duration-300"
+                className="inline-flex items-center px-6 py-3 bg-[#f16539] hover:bg-orange-600 text-white font-medium rounded-lg transition-colors duration-300 mb-6"
               >
                 Learn More
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -105,7 +105,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isActive }) => {
               </Link>
             ) : (
               <button 
-                className="inline-flex items-center px-6 py-3 bg-[#f16539] hover:bg-orange-600 text-white font-medium rounded-lg transition-colors duration-300"
+                className="inline-flex items-center px-6 py-3 bg-[#f16539] hover:bg-orange-600 text-white font-medium rounded-lg transition-colors duration-300 mb-6"
               >
                 Contact Us
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -161,11 +161,6 @@ const Services: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  const [headerRef, headerInView] = useInView({
-    triggerOnce: false,
-    threshold: 0.1
-  });
-
   const services: ServiceFeature[] = [
     {
       icon: Truck,
@@ -217,40 +212,33 @@ const Services: React.FC = () => {
     }
   }, [services.length, isPaused]);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % services.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + services.length) % services.length);
-  };
-
   return (
     <section id="services" className="relative bg-gray-900">
-      <motion.div 
-        ref={headerRef}
-        initial={{ opacity: 0, y: 30 }}
-        animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.6 }}
-        className="text-center pt-20 pb-8 relative z-10"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Our Expertise
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            We offer comprehensive consulting services designed to accelerate your growth 
-            and transform your business operations.
-          </p>
-        </div>
-      </motion.div>
-      
-      {/* Main slider */}
+      {/* Main slider with header integrated into the slideshow */}
       <div 
-        className="relative overflow-hidden"
+        className="relative overflow-hidden pb-10"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
+        {/* Expertise header overlay */}
+        <div className="absolute top-0 left-0 w-full z-20 pt-10 pb-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Our <span className="text-[#f16539]">Expertise</span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                We offer comprehensive consulting services designed to accelerate your growth 
+                and transform your business operations.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+        
         <AnimatePresence mode="wait">
           <ServiceCard 
             key={currentIndex} 
@@ -259,24 +247,8 @@ const Services: React.FC = () => {
           />
         </AnimatePresence>
         
-        {/* Navigation arrows */}
-        <button 
-          onClick={prevSlide}
-          className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full z-30 backdrop-blur-sm transition-all duration-300"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft size={24} />
-        </button>
-        <button 
-          onClick={nextSlide}
-          className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full z-30 backdrop-blur-sm transition-all duration-300"
-          aria-label="Next slide"
-        >
-          <ChevronRight size={24} />
-        </button>
-        
         {/* Dots navigation */}
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
           {services.map((_, index) => (
             <button
               key={index}
