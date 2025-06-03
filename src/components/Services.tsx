@@ -96,21 +96,27 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isActive }) => {
             {service.link ? (
               <Link 
                 to={service.link} 
-                className="inline-flex items-center px-6 py-3 bg-[#f16539] hover:bg-orange-600 text-white font-medium rounded-lg transition-colors duration-300 mb-6"
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#f16539] to-orange-500 text-white font-medium rounded-lg shadow-lg hover:shadow-orange-500/20 transition-all duration-300 hover:scale-105 transform group relative overflow-hidden mb-6"
               >
-                Learn More
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-orange-600 to-[#e05a30] translate-y-full group-hover:translate-y-0 transition-transform duration-500"></span>
+                <span className="relative flex items-center">
+                  Learn More
+                  <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </span>
               </Link>
             ) : (
               <button 
-                className="inline-flex items-center px-6 py-3 bg-[#f16539] hover:bg-orange-600 text-white font-medium rounded-lg transition-colors duration-300 mb-6"
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#f16539] to-orange-500 text-white font-medium rounded-lg shadow-lg hover:shadow-orange-500/20 transition-all duration-300 hover:scale-105 transform group relative overflow-hidden mb-6"
               >
-                Contact Us
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-orange-600 to-[#e05a30] translate-y-full group-hover:translate-y-0 transition-transform duration-500"></span>
+                <span className="relative flex items-center">
+                  Contact Us
+                  <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </span>
               </button>
             )}
           </motion.div>
