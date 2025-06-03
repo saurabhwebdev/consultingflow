@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { ArrowRight, Play, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useCallback as useCallbackParticles } from 'react';
+import Particles from 'react-tsparticles';
+import { loadSlim } from 'tsparticles-slim';
 
 // CountUp component for animating numbers
 const CountUp = ({ end, duration = 2000, suffix = '' }) => {
@@ -51,6 +54,14 @@ const CountUp = ({ end, duration = 2000, suffix = '' }) => {
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const particlesInit = useCallbackParticles(async (engine) => {
+    await loadSlim(engine);
+  }, []);
+  
+  const particlesLoaded = useCallbackParticles(async (container) => {
+    // container loaded
+  }, []);
   
   const slides = [
     {
@@ -108,6 +119,126 @@ const Hero = () => {
 
   return (
     <section id="home" className="bg-gradient-to-br from-slate-50 via-gray-50 to-white dark:from-gray-950 dark:via-gray-900 dark:to-gray-800 relative overflow-hidden pt-16">
+      {/* Particles background */}
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+        <Particles
+          id="tsparticles"
+          init={particlesInit}
+          loaded={particlesLoaded}
+          options={{
+            fpsLimit: 60,
+            particles: {
+              number: {
+                value: 80,
+                density: {
+                  enable: true,
+                  value_area: 1000
+                }
+              },
+              color: {
+                value: ["#f16539", "#ff8c66", "#ffaa80", "#ffc299", "#ff7f50"],
+              },
+              opacity: {
+                value: 0.5,
+                random: true,
+                anim: {
+                  enable: true,
+                  speed: 0.8,
+                  opacity_min: 0.2,
+                  sync: false
+                }
+              },
+              size: {
+                value: 6,
+                random: true,
+                anim: {
+                  enable: true,
+                  speed: 3,
+                  size_min: 1,
+                  sync: false
+                }
+              },
+              move: {
+                enable: true,
+                speed: 1.8,
+                direction: "none",
+                random: true,
+                straight: false,
+                out_mode: "bounce",
+                bounce: true,
+                attract: {
+                  enable: true,
+                  rotateX: 600,
+                  rotateY: 1200
+                }
+              },
+              line_linked: {
+                enable: true,
+                distance: 150,
+                color: "#f16539",
+                opacity: 0.1,
+                width: 1
+              },
+            },
+            interactivity: {
+              detect_on: "window",
+              events: {
+                onhover: {
+                  enable: true,
+                  mode: "bubble"
+                },
+                onclick: {
+                  enable: true,
+                  mode: "push"
+                },
+                resize: true
+              },
+              modes: {
+                bubble: {
+                  distance: 150,
+                  size: 8,
+                  duration: 2,
+                  opacity: 0.6,
+                  speed: 3
+                },
+                push: {
+                  particles_nb: 4
+                },
+                connect: {
+                  distance: 150,
+                  radius: 100,
+                  links: {
+                    opacity: 0.3
+                  }
+                }
+              }
+            },
+            detectRetina: true,
+            fullScreen: { enable: false },
+            style: {
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              top: "0",
+              left: "0",
+              right: "0",
+              bottom: "0",
+              zIndex: "0"
+            }
+          }}
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            top: "0",
+            left: "0",
+            right: "0",
+            bottom: "0",
+            zIndex: "0"
+          }}
+        />
+      </div>
+      
       {/* Background pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10"></div>
       
