@@ -128,48 +128,36 @@ const Services: React.FC = () => {
 
   const services: ServiceFeature[] = [
     {
-      icon: Brain,
-      title: 'Strategic Planning',
-      description: 'Develop comprehensive strategies that align with your vision and market opportunities.',
-      features: ['Market Analysis', 'Competitive Intelligence', 'Growth Roadmaps']
-    },
-    {
-      icon: Target,
-      title: 'Digital Transformation',
-      description: 'Modernize your operations with cutting-edge technology and digital solutions.',
-      features: ['Process Automation', 'Cloud Migration', 'Digital Strategy']
-    },
-    {
       icon: Truck,
       title: 'Supply Chain',
-      description: 'Transform supply chain excellence with smart innovations and sustainable solutions.',
+      description: 'Building a responsive and future-ready supply chain. We create agile, efficient, and resilient systems that optimize operations. Our strategic approach ensures seamless movement, reduced risks, and enhanced productivity.',
       features: ['Planning', 'Logistics', 'Procurement'],
       link: '/supply-chain'
     },
     {
       icon: ShoppingBag,
       title: 'Sales & Distribution',
-      description: 'Revolutionize your sales and distribution processes for a smarter future.',
+      description: 'Driving efficiency in sales and distribution. We design seamless processes that enhance customer experience and maximize business impact. Our solutions ensure smooth transactions, faster delivery, and increased profitability.',
       features: ['Digital Commerce', 'Route to Market', 'Sales Analytics'],
       link: '/sales-distribution'
     },
     {
       icon: Zap,
-      title: 'Operational Excellence',
-      description: 'Optimize workflows and eliminate inefficiencies to boost productivity.',
+      title: 'Strategy & Operations',
+      description: 'Executing high-impact strategies with precision. We streamline operations, enhance productivity, and drive sustainable growth. Our focus is on delivering efficient solutions that help businesses stay ahead.',
       features: ['Process Optimization', 'Quality Management', 'Performance Metrics']
     },
     {
-      icon: Shield,
-      title: 'Risk Management',
-      description: 'Identify, assess, and mitigate risks to protect your business interests.',
-      features: ['Risk Assessment', 'Compliance', 'Business Continuity']
+      icon: Target,
+      title: 'Data & Decision Intelligence',
+      description: 'Transforming data into meaningful decisions. We analyze patterns, extract key insights, and provide smart recommendations. Our approach helps businesses make informed choices that lead to measurable success.',
+      features: ['Data Analysis', 'Business Intelligence', 'Predictive Analytics']
     },
     {
-      icon: Globe,
-      title: 'Market Expansion',
-      description: 'Enter new markets and scale your business with confidence and expertise.',
-      features: ['Market Entry', 'International Strategy', 'Partnership Development']
+      icon: Brain,
+      title: 'Finance',
+      description: 'Empowering businesses with data-driven financial insights. We enhance decision-making with precision, ensuring efficiency, compliance, and growth. Our expert strategies help optimize resources and drive long-term success.',
+      features: ['Financial Planning', 'Risk Management', 'Performance Analysis']
     }
   ];
 
