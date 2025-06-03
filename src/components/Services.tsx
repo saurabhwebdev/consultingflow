@@ -63,8 +63,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isActive }) => {
       </div>
       
       {/* Content */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-32 md:pt-40">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20 md:pt-32 lg:pt-40">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <motion.div
             initial="enter"
             animate="center"
@@ -72,23 +72,23 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isActive }) => {
             variants={variants}
             className="text-white"
           >
-            <div className="w-16 h-16 bg-gradient-to-r from-[#f16539] to-orange-500 rounded-2xl flex items-center justify-center mb-6">
-              <service.icon className="text-white" size={32} />
+            <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-r from-[#f16539] to-orange-500 rounded-2xl flex items-center justify-center mb-4 md:mb-6">
+              <service.icon className="text-white" size={24} />
             </div>
             
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4">
               {service.title}
             </h3>
             
-            <p className="text-lg text-gray-200 mb-6 leading-relaxed max-w-lg">
+            <p className="text-base sm:text-lg text-gray-200 mb-4 md:mb-6 leading-relaxed max-w-lg">
               {service.description}
             </p>
             
-            <ul className="space-y-3 mb-6">
+            <ul className="space-y-2 md:space-y-3 mb-6">
               {service.features.map((feature, featureIndex) => (
-                <li key={featureIndex} className="flex items-center text-gray-200">
-                  <div className="w-2 h-2 bg-[#f16539] rounded-full mr-3"></div>
-                  {feature}
+                <li key={featureIndex} className="flex items-center text-gray-200 text-sm sm:text-base">
+                  <div className="w-2 h-2 bg-[#f16539] rounded-full mr-2 md:mr-3 flex-shrink-0"></div>
+                  <span>{feature}</span>
                 </li>
               ))}
             </ul>
@@ -96,24 +96,24 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isActive }) => {
             {service.link ? (
               <Link 
                 to={service.link} 
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#f16539] to-orange-500 text-white font-medium rounded-lg shadow-lg hover:shadow-orange-500/20 transition-all duration-300 hover:scale-105 transform group relative overflow-hidden mb-6"
+                className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-[#f16539] to-orange-500 text-white text-sm sm:text-base font-medium rounded-lg shadow-lg hover:shadow-orange-500/20 transition-all duration-300 hover:scale-105 transform group relative overflow-hidden mb-6"
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-orange-600 to-[#e05a30] translate-y-full group-hover:translate-y-0 transition-transform duration-500"></span>
                 <span className="relative flex items-center">
                   Learn More
-                  <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                   </svg>
                 </span>
               </Link>
             ) : (
               <button 
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#f16539] to-orange-500 text-white font-medium rounded-lg shadow-lg hover:shadow-orange-500/20 transition-all duration-300 hover:scale-105 transform group relative overflow-hidden mb-6"
+                className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-[#f16539] to-orange-500 text-white text-sm sm:text-base font-medium rounded-lg shadow-lg hover:shadow-orange-500/20 transition-all duration-300 hover:scale-105 transform group relative overflow-hidden mb-6"
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-orange-600 to-[#e05a30] translate-y-full group-hover:translate-y-0 transition-transform duration-500"></span>
                 <span className="relative flex items-center">
                   Contact Us
-                  <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                   </svg>
                 </span>
@@ -136,7 +136,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isActive }) => {
                 {Array(3).fill(0).map((_, i) => (
                   <li key={i} className="flex items-start cursor-pointer">
                     <div 
-                      className="bg-[#f16539]/20 p-2 rounded-lg mr-4 mt-1 transition-all duration-300 hover:bg-[#f16539]/30 hover:scale-105 hover:shadow-md cursor-pointer"
+                      className="bg-[#f16539]/20 p-2 rounded-lg mr-4 mt-1 transition-all duration-300 hover:bg-[#f16539]/30 hover:scale-105 hover:shadow-md cursor-pointer flex-shrink-0"
                     >
                       <div 
                         className="w-6 h-6 bg-[#f16539] rounded-md flex items-center justify-center transition-all duration-300 hover:bg-[#ff7d53] hover:shadow-lg"
@@ -244,17 +244,17 @@ const Services: React.FC = () => {
         onMouseLeave={() => setIsPaused(false)}
       >
         {/* Expertise header overlay */}
-        <div className="absolute top-0 left-0 w-full z-20 pt-10 pb-4">
+        <div className="absolute top-0 left-0 w-full z-20 pt-6 sm:pt-8 md:pt-10 pb-4">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 sm:mb-4">
                 Our <span className="text-[#f16539]">Expertise</span>
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
                 We offer comprehensive consulting services designed to accelerate your growth 
                 and transform your business operations.
               </p>
@@ -271,13 +271,13 @@ const Services: React.FC = () => {
         </AnimatePresence>
         
         {/* Dots navigation */}
-        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+        <div className="absolute bottom-4 sm:bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-1.5 sm:space-x-2 z-30">
           {services.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex ? 'bg-[#f16539] w-8' : 'bg-white/50 hover:bg-white'
+              className={`w-2 sm:w-3 h-2 sm:h-3 rounded-full transition-all duration-300 ${
+                index === currentIndex ? 'bg-[#f16539] w-6 sm:w-8' : 'bg-white/50 hover:bg-white'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
