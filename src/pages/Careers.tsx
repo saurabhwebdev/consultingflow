@@ -85,18 +85,117 @@ const Careers = () => {
       
       {/* Hero Section */}
       <div className="relative w-full h-[60vh] md:h-[70vh] bg-gray-900 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/70 via-gray-900/50 to-gray-900/90 z-10"></div>
-        <video 
+        {/* Background image with gradient overlay */}
+        <img 
+          src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920" 
+          alt="Team collaboration" 
           className="absolute inset-0 w-full h-full object-cover"
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-        >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-people-working-in-an-office-environment-31516-large.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4 md:px-8">
+        />
+        
+        {/* Brand color overlay with gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-[#f16539]/30 to-gray-900/80 z-10"></div>
+        
+        {/* Particle animation for added visual interest */}
+        <div className="absolute inset-0 z-20">
+          <Particles
+            id="careersHeroParticles"
+            init={particlesInit}
+            loaded={particlesLoaded}
+            options={{
+              fullScreen: { enable: false },
+              fpsLimit: 120,
+              particles: {
+                number: {
+                  value: 40,
+                  density: {
+                    enable: true,
+                    value_area: 900
+                  }
+                },
+                color: {
+                  value: ["#ffffff", "#f16539", "#ffaa80"],
+                },
+                shape: {
+                  type: ["circle"],
+                },
+                opacity: {
+                  value: 0.6,
+                  random: true,
+                  anim: {
+                    enable: true,
+                    speed: 1,
+                    opacity_min: 0.1,
+                    sync: false
+                  }
+                },
+                size: {
+                  value: 3,
+                  random: true,
+                  anim: {
+                    enable: true,
+                    speed: 2,
+                    size_min: 0.5,
+                    sync: false
+                  }
+                },
+                line_linked: {
+                  enable: true,
+                  distance: 150,
+                  color: "#ffffff",
+                  opacity: 0.2,
+                  width: 1
+                },
+                move: {
+                  enable: true,
+                  speed: 1.5,
+                  direction: "none",
+                  random: true,
+                  straight: false,
+                  out_mode: "out",
+                  bounce: false,
+                  attract: {
+                    enable: true,
+                    rotateX: 600,
+                    rotateY: 1200
+                  }
+                }
+              },
+              interactivity: {
+                detect_on: "canvas",
+                events: {
+                  onhover: {
+                    enable: true,
+                    mode: "grab"
+                  },
+                  onclick: {
+                    enable: true,
+                    mode: "push"
+                  },
+                  resize: true
+                },
+                modes: {
+                  grab: {
+                    distance: 140,
+                    line_linked: {
+                      opacity: 0.5
+                    }
+                  },
+                  push: {
+                    particles_nb: 3
+                  }
+                }
+              },
+              retina_detect: true
+            }}
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%"
+            }}
+          />
+        </div>
+        
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-30 px-4 md:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
