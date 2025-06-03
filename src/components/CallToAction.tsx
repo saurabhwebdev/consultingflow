@@ -15,11 +15,21 @@ const CallToAction = () => {
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+      {/* Background image with overlay */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gray-900/85 mix-blend-multiply z-10"></div>
+        <img 
+          src="https://images.pexels.com/photos/7234248/pexels-photo-7234248.jpeg?auto=compress&cs=tinysrgb&w=1920" 
+          alt="Background" 
+          className="w-full h-full object-cover object-center opacity-25"
+        />
+      </div>
+      
       {/* Enhanced backdrop gradient */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-[#f16539]/5 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-[#f16539]/5 to-transparent z-20"></div>
       
       {/* Particles animation */}
-      <div className="absolute inset-0 w-full h-full z-0">
+      <div className="absolute inset-0 w-full h-full z-30">
         <Particles
           id="ctaParticles"
           init={particlesInit}
@@ -137,7 +147,7 @@ const CallToAction = () => {
       </div>
       
       {/* CTA Content with enhanced design */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-40">
         <div className="bg-gray-900/30 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-white/10 shadow-2xl">
           <div className="text-center">
             <div className="inline-block mb-6 relative">
