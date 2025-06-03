@@ -18,7 +18,7 @@ const Footer = () => {
       { name: 'Contact Us', path: '/contact-us' },
       { name: 'Careers', path: '/careers' },
       { name: 'Blog', path: '#' },
-      { name: 'Case Study', path: '#' },
+      { name: 'Case Study', path: '/case-study' },
       { name: 'Whitepapers', path: '#' }
     ],
     Services: [
