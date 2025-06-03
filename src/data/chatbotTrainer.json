@@ -1,0 +1,167 @@
+{
+  "company": {
+    "name": "Thoucentric",
+    "description": "A global consulting firm specializing in digital transformation, strategy consulting, and technology implementation.",
+    "founded": 2015,
+    "headquarters": "Bangalore, India",
+    "offices": [
+      "Bangalore, India",
+      "Mumbai, India",
+      "Austin, United States",
+      "Rotterdam, Netherlands",
+      "Singapore",
+      "Harrow, United Kingdom"
+    ],
+    "employees": "500+",
+    "website": "https://thoucentric.com"
+  },
+  "services": [
+    {
+      "name": "Strategic Planning",
+      "description": "Develop comprehensive strategies that align with your vision and market opportunities.",
+      "features": ["Market Analysis", "Competitive Intelligence", "Growth Roadmaps"]
+    },
+    {
+      "name": "Digital Transformation",
+      "description": "Modernize your operations with cutting-edge technology and digital solutions.",
+      "features": ["Process Automation", "Cloud Migration", "Digital Strategy"]
+    },
+    {
+      "name": "Operational Excellence",
+      "description": "Optimize workflows and eliminate inefficiencies to boost productivity.",
+      "features": ["Process Optimization", "Quality Management", "Performance Metrics"]
+    },
+    {
+      "name": "Risk Management",
+      "description": "Identify, assess, and mitigate risks to protect your business interests.",
+      "features": ["Risk Assessment", "Compliance", "Business Continuity"]
+    },
+    {
+      "name": "Market Expansion",
+      "description": "Enter new markets and scale your business with confidence and expertise.",
+      "features": ["Market Entry", "International Strategy", "Partnership Development"]
+    },
+    {
+      "name": "Performance Analytics",
+      "description": "Leverage data-driven insights to make informed business decisions.",
+      "features": ["Data Analytics", "KPI Tracking", "Predictive Modeling"]
+    }
+  ],
+  "industries": [
+    "Manufacturing",
+    "Retail",
+    "Healthcare",
+    "Financial Services",
+    "Technology",
+    "Energy",
+    "Education",
+    "Transportation"
+  ],
+  "faqs": [
+    {
+      "question": "What is Thoucentric's approach to digital transformation?",
+      "answer": "Thoucentric takes a holistic approach to digital transformation, focusing on people, processes, and technology. We begin with a thorough assessment of your current state, define a clear vision for your future state, and develop a roadmap to bridge the gap. Our methodology ensures that digital initiatives align with your business objectives and deliver measurable value."
+    },
+    {
+      "question": "How does Thoucentric ensure project success?",
+      "answer": "We employ a rigorous project management methodology with clear milestones, regular check-ins, and transparent reporting. Our teams are composed of experienced consultants with deep industry knowledge, and we maintain close collaboration with clients throughout the engagement to ensure alignment and address any challenges promptly."
+    },
+    {
+      "question": "What makes Thoucentric different from other consulting firms?",
+      "answer": "Thoucentric combines strategic thinking with practical implementation expertise. We don't just deliver recommendations; we partner with you to implement solutions and drive real change. Our global perspective, coupled with local market knowledge, allows us to bring best practices while respecting cultural nuances."
+    },
+    {
+      "question": "How does Thoucentric stay current with emerging technologies?",
+      "answer": "We invest heavily in continuous learning and research. Our consultants regularly participate in industry conferences, certification programs, and internal knowledge sharing sessions. We also maintain partnerships with leading technology providers to stay at the forefront of innovation."
+    }
+  ],
+  "demographicQuestions": [
+    {
+      "id": "name",
+      "question": "Hi there! I'm TIA, your Thoucentric Intelligent Assistant. May I know your name?",
+      "type": "text",
+      "placeholder": "Your full name"
+    },
+    {
+      "id": "email",
+      "question": "Great to meet you! What's your email address where I can follow up if needed?",
+      "type": "email",
+      "placeholder": "your.email@company.com"
+    },
+    {
+      "id": "company",
+      "question": "Which company are you representing today?",
+      "type": "text",
+      "placeholder": "Your company name"
+    },
+    {
+      "id": "phone",
+      "question": "What's the best phone number to reach you?",
+      "type": "tel",
+      "placeholder": "Your contact number"
+    },
+    {
+      "id": "country",
+      "question": "Which country are you based in?",
+      "type": "select",
+      "options": ["United States", "India", "United Kingdom", "Netherlands", "Singapore", "Other"]
+    },
+    {
+      "id": "role",
+      "question": "What is your role in your organization?",
+      "type": "select",
+      "options": ["C-Suite Executive", "Senior Management", "Middle Management", "Individual Contributor", "Other"]
+    },
+    {
+      "id": "industry",
+      "question": "Which industry does your organization operate in?",
+      "type": "select",
+      "options": ["Manufacturing", "Retail", "Healthcare", "Financial Services", "Technology", "Energy", "Education", "Transportation", "Other"]
+    },
+    {
+      "id": "companySize",
+      "question": "What is the size of your organization?",
+      "type": "select",
+      "options": ["1-50 employees", "51-200 employees", "201-500 employees", "501-1000 employees", "1001-5000 employees", "5000+ employees"]
+    },
+    {
+      "id": "challengeArea",
+      "question": "What is your primary area of interest or challenge?",
+      "type": "select",
+      "options": ["Digital Transformation", "Operational Efficiency", "Strategic Planning", "Market Expansion", "Risk Management", "Performance Analytics", "Other"]
+    }
+  ],
+  "conversationalResponses": {
+    "greetings": [
+      "Hello! I'm TIA, your Thoucentric Intelligent Assistant. How can I help you today?",
+      "Hi there! I'm TIA from Thoucentric. What can I assist you with today?",
+      "Welcome to Thoucentric! I'm TIA, your dedicated assistant. How may I help you?",
+      "Good day! I'm TIA, your Thoucentric consultant. How can I support your business needs today?"
+    ],
+    "farewells": [
+      "Thank you for chatting with me today. Feel free to return if you have more questions!",
+      "It was great helping you. Have a wonderful day, and don't hesitate to reach out if you need further assistance!",
+      "I hope our conversation was helpful. Please feel free to contact us again with any other questions!",
+      "Thank you for your time. The Thoucentric team and I are here whenever you need more information!"
+    ],
+    "thanks": [
+      "You're welcome! Is there anything else I can help with?",
+      "Happy to help! Let me know if you have other questions about our consulting services.",
+      "My pleasure! Is there something else you'd like to know about how Thoucentric can support your business?",
+      "Glad I could assist. Anything else you'd like to discuss about your business challenges?"
+    ],
+    "confusion": [
+      "I'm not sure I understood that correctly. Could you please rephrase?",
+      "I want to make sure I'm addressing your needs correctly. Could you clarify what you're looking for?",
+      "I want to help, but I'm having trouble understanding your request. Could you try explaining it differently?",
+      "Let me make sure I understand correctly. Could you provide a bit more detail about what you're asking?"
+    ],
+    "femalePersonality": [
+      "As a professional consultant, I'm here to provide you with insights and guidance.",
+      "In my experience working with clients across industries, I've found that...",
+      "Based on my analysis of your situation, I would recommend...",
+      "I've helped many organizations overcome similar challenges by...",
+      "Let me share some perspective on how we might approach this..."
+    ]
+  }
+} 

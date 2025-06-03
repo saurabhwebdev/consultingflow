@@ -1,0 +1,15 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f16539" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ff9966" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#f8f9fa"/>
+  <circle cx="900" cy="400" r="350" fill="url(#grad1)" opacity="0.7"/>
+  <path d="M0,600 Q300,200 600,400 T1200,300" stroke="#f16539" stroke-width="8" fill="none" opacity="0.5"/>
+  <path d="M0,700 Q300,500 600,600 T1200,500" stroke="#ff9966" stroke-width="12" fill="none" opacity="0.3"/>
+  <rect x="750" y="100" width="300" height="300" rx="20" fill="#f16539" opacity="0.2"/>
+  <rect x="800" y="400" width="200" height="200" rx="20" fill="#f16539" opacity="0.4"/>
+  <text x="50%" y="50%" font-family="Arial" font-size="24" fill="#888" text-anchor="middle">Hero Slide 1</text>
+</svg> 
