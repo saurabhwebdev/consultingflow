@@ -1,5 +1,8 @@
 import React from 'react';
 import { CheckCircle, Award, Users, Lightbulb } from 'lucide-react';
+import { useCallback } from 'react';
+import Particles from 'react-tsparticles';
+import { loadSlim } from 'tsparticles-slim';
 
 const About = () => {
   const values = [
@@ -24,10 +27,139 @@ const About = () => {
       description: 'We provide data-driven recommendations based on deep industry knowledge and analytical expertise.'
     }
   ];
+  
+  const particlesInit = useCallback(async (engine) => {
+    await loadSlim(engine);
+  }, []);
+  
+  const particlesLoaded = useCallback(async (container) => {
+    // container loaded
+  }, []);
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-orange-50 dark:from-gray-900 dark:to-orange-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-orange-50 dark:from-gray-900 dark:to-orange-950 relative overflow-hidden">
+      {/* Particles background */}
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+        <Particles
+          id="aboutParticles"
+          init={particlesInit}
+          loaded={particlesLoaded}
+          options={{
+            fpsLimit: 60,
+            particles: {
+              number: {
+                value: 20,
+                density: {
+                  enable: true,
+                  value_area: 800
+                }
+              },
+              shape: {
+                type: ["circle", "triangle", "polygon"],
+                polygon: {
+                  sides: 5
+                }
+              },
+              color: {
+                value: ["#f16539", "#ffaa80", "#fda07e", "#ffc299"],
+              },
+              opacity: {
+                value: 0.3,
+                random: true,
+                anim: {
+                  enable: true,
+                  speed: 0.2,
+                  opacity_min: 0.1,
+                  sync: false
+                }
+              },
+              size: {
+                value: 15,
+                random: true,
+                anim: {
+                  enable: true,
+                  speed: 1,
+                  size_min: 5,
+                  sync: false
+                }
+              },
+              move: {
+                enable: true,
+                speed: 0.6,
+                direction: "top",
+                random: true,
+                straight: false,
+                out_mode: "out",
+                gravity: {
+                  enable: false
+                },
+                attract: {
+                  enable: true,
+                  rotateX: 600,
+                  rotateY: 1200
+                }
+              },
+              rotate: {
+                value: 0,
+                random: true,
+                direction: "clockwise",
+                animation: {
+                  enable: true,
+                  speed: 5,
+                  sync: false
+                }
+              }
+            },
+            interactivity: {
+              detect_on: "window",
+              events: {
+                onhover: {
+                  enable: true,
+                  mode: "repulse"
+                },
+                onclick: {
+                  enable: true,
+                  mode: "push"
+                },
+                resize: true
+              },
+              modes: {
+                repulse: {
+                  distance: 100,
+                  duration: 0.4
+                },
+                push: {
+                  particles_nb: 2
+                }
+              }
+            },
+            detectRetina: true,
+            fullScreen: { enable: false },
+            style: {
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              top: "0",
+              left: "0",
+              right: "0",
+              bottom: "0",
+              zIndex: "0"
+            }
+          }}
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            top: "0",
+            left: "0",
+            right: "0",
+            bottom: "0",
+            zIndex: "0"
+          }}
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
@@ -77,7 +209,7 @@ const About = () => {
           </div>
         </div>
         
-        <div className="mt-20">
+        <div className="mt-20 relative z-10">
           <h3 className="text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-12">Our Core Values</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
