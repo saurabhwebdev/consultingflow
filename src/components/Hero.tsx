@@ -57,7 +57,7 @@ const Hero = () => {
       title: "Consulting that",
       highlight: "Solves, Not Just Recommends",
       description: "We partner with clients to resolve complexity and evolve capability—through expertise, technology, and execution.",
-      image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920",
+      image: "https://thoucentric.com/wp-content/uploads/2025/05/home-who-we-are-2048x1366.jpg",
     },
     {
       title: "Thoucentric Named",
